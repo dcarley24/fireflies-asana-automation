@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="h-full bg-gray-900">
+    <head>
+        <meta charset="UTF-G" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Brief Generator</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            .form-input {
+                appearance: none;
+                background-color: #1f2937; /* gray-800 */
+                border: 1px solid #4b5563; /* gray-600 */
+                color: #f9fafb; /* gray-50 */
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem;
+                width: 100%;
+                transition: border-color 0.2s;
+            }
+            .form-input:focus {
+                outline: none;
+                border-color: #3b82f6; /* blue-500 */
+            }
+        </style>
+    </head>
+    <body
+        class="h-full flex items-center justify-center p-6 bg-gray-900 text-gray-200"
+    >
+        <div class="w-full max-w-2xl bg-gray-800 shadow-2xl rounded-lg p-8">
+            <h1 class="text-3xl font-bold text-center mb-2 text-white">
+                AI Brief Generator
+            </h1>
+            <p class="text-center text-gray-400 mb-8">
+                Paste a meeting transcript below to automatically create a
+                structured project brief in Asana.
+            </p>
+
+            <form action="/create-brief" method="POST">
+                <div class="mb-6">
+                    <label
+                        for="task_name"
+                        class="block text-sm font-medium text-gray-300 mb-2"
+                        >Asana Task Name</label
+                    >
+                    <input
+                        type="text"
+                        id="task_name"
+                        name="task_name"
+                        class="form-input"
+                        placeholder="e.g., Project Kickoff for Client X"
+                        required
+                    />
+                </div>
+                <div class="mb-6">
+                    <label
+                        for="transcript"
+                        class="block text-sm font-medium text-gray-300 mb-2"
+                        >Raw Meeting Transcript</label
+                    >
+                    <textarea
+                        id="transcript"
+                        name="transcript"
+                        rows="12"
+                        class="form-input"
+                        placeholder="Paste the full, messy transcript here..."
+                        required
+                    ></textarea>
+                </div>
+                <div>
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500"
+                    >
+                        Create Brief in Asana
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

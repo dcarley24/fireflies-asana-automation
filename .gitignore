@@ -1,0 +1,5 @@
+__pycache__/
+.env
+*.db
+app.py.old_project_search_logic
+ai_processor.py.original
