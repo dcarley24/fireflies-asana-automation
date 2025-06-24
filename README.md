@@ -79,7 +79,6 @@ These instructions will get you a copy of the project up and running on your loc
 3.  **Configure the Fireflies Webhook:**
     * Log in to your Fireflies.ai account and navigate to your API/Integrations settings.
     * Create a new webhook for the "Transcription Completed" event.
-    * **Target URL:** Paste your `ngrok` URL and add the endpoint path: `https://<your-ngrok-url>/webhook/fireflies`.
     * **Secret key:** Paste the same `FIREFLIES_WEBHOOK_SECRET` value from your `.env` file.
     * Save and enable the webhook.
 
