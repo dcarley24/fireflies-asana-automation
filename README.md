@@ -72,31 +72,30 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Running the Application
 
+### Running Locally for Development
+
 1.  **Start the Flask Server:**
     From the project's root directory, run the application.
     ```bash
     python app.py
     ```
-    The server will start on `http://0.0.0.0:5019`.
+    The server will start on `http://localhost:5019`. The `/webhook/fireflies` endpoint will be available for local testing.
 
-2.  **Expose the Server with `ngrok`:**
-    In a new terminal window, start `ngrok` to create a public URL that forwards to your local server.
-    ```bash
-    ngrok http 5019
-    ```ngrok` will provide you with a public URL (e.g., `https://random-string.ngrok-free.app`).
+### Deployment for Live Webhooks
 
-3.  **Configure the Fireflies Webhook:**
-    * Log in to your Fireflies.ai account and navigate to your API/Integrations settings.
-    * Create a new webhook for the "Transcription Completed" event.
-    * **Secret key:** Paste the same `FIREFLIES_WEBHOOK_SECRET` value from your `.env` file.
-    * Save and enable the webhook.
+For the application to receive live webhook notifications from Fireflies.ai, it must be deployed to a hosting service that provides a stable, public URL (e.g., Render, Heroku, AWS).
 
-## Testing
+1.  Deploy the application to your chosen hosting provider.
+2.  Once deployed, you will have a public URL for the service (e.g., `https://your-app-name.onrender.com`).
+3.  Go to your Fireflies.ai developer settings and configure the webhook to point to your public URL's webhook endpoint: `https://<your-public-app-url>/webhook/fireflies`.
 
-You can test the entire workflow without waiting for a new meeting by simulating the Fireflies webhook with `curl`.
+## Testing the Webhook Locally
+
+You can test the entire workflow without deploying the application by sending a simulated webhook request to your local running server using `curl`. This is the recommended way to test changes during development.
 
 1.  Get a valid Meeting ID from a past meeting in your Fireflies account.
-2.  Run the following command in a terminal, replacing the placeholder values.
+2.  Run the following command in a terminal, replacing the placeholder values with your real data. This command sends the request directly to your local server.
+
     ```bash
     curl -X POST http://localhost:5019/webhook/fireflies \
     -H "Content-Type: application/json" \
