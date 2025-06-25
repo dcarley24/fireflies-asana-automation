@@ -33,7 +33,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Python 3.10+
 * `pip` for installing Python packages
-* `ngrok` for exposing the local server to the internet for webhook testing.
 
 ### Installation
 
