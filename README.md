@@ -1,6 +1,6 @@
 # Fireflies-Asana Automation
 
-This project is an intelligent, event-driven service designed to automate the workflow between [Fireflies.ai](https://fireflies.ai) and [Asana](https://asana.com). It listens for completed meeting transcriptions from Fireflies, uses a multi-pass AI workflow to clean, analyze, and summarize the content, and then automatically creates a structured, actionable project brief within the correct Asana project.
+This project is an intelligent, event-driven service designed to automate the workflow between [Fireflies.ai](https://fireflies.ai) and [Asana](https://asana.com). It listens for completed meeting transcriptions from Fireflies, uses a multi-pass AI workflow to clean, analyze, and summarize the content, and then automatically creates a structured, actionable project brief within the correct Asana project, complete with an assignable sub-task for every action item identified in the meeting.
 
 The primary goal is to eliminate the manual work of processing meeting notes, creating a "zero-touch" bridge from conversation to action.
 
