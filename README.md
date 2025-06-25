@@ -4,6 +4,15 @@ This project is an intelligent, event-driven service designed to automate the wo
 
 The primary goal is to eliminate the manual work of processing meeting notes, creating a "zero-touch" bridge from conversation to action.
 
+## Why This Project Exists: The Limitations of the Native Integration
+While Fireflies.ai offers a native integration with Asana, it is insufficient for most dynamic, multi-client workflows. The out-of-the-box solution suffers from critical limitations:
+
+* **Static Configuration:** The native integration can only be configured to send tasks to a single, predefined Asana project and a single list within that project. This makes it unworkable for teams that handle multiple projects or clients, as it would require constant manual reconfiguration.
+
+* **Broad, Non-Actionable Tasks:** The integration typically creates a single, broad task for an entire meeting (e.g., "Attend meeting about Project X"). It lacks the intelligence to parse the conversation and identify the discrete, actionable tasks that were actually agreed upon.
+
+This project was built to solve these specific problems. It replaces the rigid, native integration with an intelligent, "zero-touch" automation layer. Instead of just creating one generic task, our multi-pass AI engine actively listens to the conversation, understands its context, identifies the truly actionable tasks, and routes a complete, structured brief to the correct Asana project, turning raw conversation into organized work automatically.
+
 ## Core Features
 
 * **Automated Triggering:** The entire workflow is initiated automatically via a "Transcription Completed" webhook from Fireflies.ai.
